@@ -1,0 +1,13 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: wow_members
+      POSTGRES_USER: wow
+      POSTGRES_PASSWORD: wowpass
+    ports:
+      - "5432:5432"
+    volumes:
+      - wow_pgdata:/var/lib/postgresql/data
+volumes:
+  wow_pgdata:
